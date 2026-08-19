@@ -1,24 +1,21 @@
-# ModernTech Solutions - HR Command Portal
+# ModernTech Solutions HR System - Backend API (Phase 2)
 
-A secure, database-driven Human Resource Management Application built with a responsive Vue.js frontend and a PHP/MariaDB REST API backend. This portal allows administrators to manage employee records, compute payroll ledgers, oversee absence requests, and analyze departmental metrics.
+## Overview
+This repository contains the backend infrastructure for the ModernTech HR System. Built with PHP and MySQL running on port 3307, this service provides RESTful API endpoints for employee CRUD management, session-based authentication, and time-off request handling.
 
----
+## Technologies Used
+* **Backend:** PHP 8.x
+* **Database:** MariaDB / MySQL (Port 3307)
+* **Authentication:** Native PHP Sessions with `password_hash()` and `password_verify()`
+* **Security:** Parameterized prepared statements (PDO) and environment isolation via `.env`
 
-## Tech Stack & Dependencies
-
-* **Frontend:** Vue.js 3 (Options API / Composition API via CDN), Bootstrap 5.3, Bootstrap Icons
-* **Backend:** PHP 8.x (REST API using PDO and Prepared Statements)
-* **Database:** MariaDB / MySQL (Running on custom Port **3307**)
-* **Environment & Tooling:** Termux / Linux environment, `vlucas/phpdotenv` or native `.env` parser, Git
-
----
-
-## Local Setup & Installation
-
-Follow these steps to clone, configure, and execute the project locally.
-
-### 1. Repository Setup
-Clone the repository to your local environment:
-```bash
-git clone [https://github.com/Yusuf106ismail/moderntech-backend.git](https://github.com/Yusuf106ismail/moderntech-backend.git)
-cd moderntech-backend
+## Local Setup Instructions
+1. **Start MariaDB on Port 3307:**
+   ```bash
+   mysqld_safe --port=3307 &
+DB_HOST=127.0.0.1
+DB_PORT=3307
+DB_NAME=moderntech_hr
+DB_USER=root
+DB_PASS=
+php -S 127.0.0.1:8000
